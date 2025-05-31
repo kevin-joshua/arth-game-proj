@@ -98,11 +98,11 @@ const App = () => {
 
   const getTokenStyle = (tile, player) => {
     const [x, y] = TILE_MAP[tile];
-    // Calculate position as percentage of board size
-    const leftPercent = (x * 20) + 10; // 20% per column, centered in tile
-    const topPercent = (y * 20) + 10;  // 20% per row, centered in tile
+  
+    const leftPercent = (x * 20) + 10; 
+    const topPercent = (y * 20) + 10;  
     
-    // Slight offset for two players so they don't overlap
+    
     const playerOffset = player === 0 ? -1 : 1;
     
     return {
@@ -140,10 +140,7 @@ const App = () => {
             className="w-full h-full object-cover"
           />
           
-          {/* Debug overlay - set to true to see tile positions for adjustment */}
-          {/* {renderDebugTiles(false)} */}
-          
-          {/* Player Tokens */}
+        
           <div style={getTokenStyle(positions[0], 0)}></div>
           <div style={getTokenStyle(positions[1], 1)}></div>
         </div>
@@ -213,7 +210,7 @@ const App = () => {
           </div>
         )}
 
-        {/* Message Display - Keep this for special tile messages */}
+   
         {message && (
           <div className="mt-4 bg-yellow-100 border-l-4 border-yellow-500 p-4 rounded-r-lg">
             <p className="text-sm text-gray-800">{message}</p>
